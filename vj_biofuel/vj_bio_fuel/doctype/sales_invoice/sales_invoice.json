@@ -11,6 +11,18 @@
   "place_of_supply",
   "posting_date",
   "company",
+  "column_break_6",
+  "e_way_bill_no",
+  "delivery_note",
+  "mode_of_payment",
+  "reference_no",
+  "buyer_order_no",
+  "section_break_14",
+  "dispatch_doc_no",
+  "dispatched_through",
+  "destination",
+  "terms_of_delivery",
+  "items_section",
   "items",
   "tax_type",
   "total_amount",
@@ -58,6 +70,64 @@
    "label": "Company",
    "options": "Company",
    "reqd": 1
+  },
+  {
+   "fieldname": "column_break_6",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "e_way_bill_no",
+   "fieldtype": "Data",
+   "label": "e-Way Bill No."
+  },
+  {
+   "fieldname": "delivery_note",
+   "fieldtype": "Data",
+   "label": "Delivery Note"
+  },
+  {
+   "fieldname": "mode_of_payment",
+   "fieldtype": "Data",
+   "label": "Mode/Terms of Payment"
+  },
+  {
+   "fieldname": "reference_no",
+   "fieldtype": "Data",
+   "label": "Reference No. & Date"
+  },
+  {
+   "fieldname": "buyer_order_no",
+   "fieldtype": "Data",
+   "label": "Buyer's Order No."
+  },
+  {
+   "fieldname": "section_break_14",
+   "fieldtype": "Section Break",
+   "label": "Dispatch Details"
+  },
+  {
+   "fieldname": "dispatch_doc_no",
+   "fieldtype": "Data",
+   "label": "Dispatch Doc No."
+  },
+  {
+   "fieldname": "dispatched_through",
+   "fieldtype": "Data",
+   "label": "Dispatched through"
+  },
+  {
+   "fieldname": "destination",
+   "fieldtype": "Data",
+   "label": "Destination"
+  },
+  {
+   "fieldname": "terms_of_delivery",
+   "fieldtype": "Small Text",
+   "label": "Terms of Delivery"
+  },
+  {
+   "fieldname": "items_section",
+   "fieldtype": "Section Break"
   },
   {
    "fieldname": "items",

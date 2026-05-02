@@ -250,6 +250,7 @@ app_license = "mit"
 fixtures = [
     {"dt": "Workspace", "filters": [["module", "=", "VJ Bio Fuel"]]},
     {"dt": "Number Card", "filters": [["module", "=", "VJ Bio Fuel"]]},
-    {"dt": "Dashboard Chart", "filters": [["module", "=", "VJ Bio Fuel"]]}
+    {"dt": "Dashboard Chart", "filters": [["module", "=", "VJ Bio Fuel"]]},
+    {"dt": "Print Format", "filters": [["module", "=", "VJ Bio Fuel"]]}
 ]
 
