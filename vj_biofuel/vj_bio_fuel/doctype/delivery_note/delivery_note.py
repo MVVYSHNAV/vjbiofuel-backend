@@ -7,6 +7,7 @@ class DeliveryNote(Document):
     def validate(self):
         self.validate_linkage()
         self.validate_quantities()
+        self.validate_transport()
 
     def validate_linkage(self):
         if not self.sales_invoice:
@@ -43,6 +44,19 @@ class DeliveryNote(Document):
                 frappe.throw(_("Cannot deliver {0} L of {1}. Only {2} L remaining in Invoice {3}")
                     .format(item.qty, item.item, remaining, self.sales_invoice))
 
+    def validate_transport(self):
+        """Mandatory checks for vehicle and driver info"""
+        if not self.vehicle_number:
+            frappe.throw(_("Vehicle Number is mandatory for transport tracking"))
+        
+        if not self.driver_phone:
+            frappe.throw(_("Driver Phone Number is mandatory"))
+        
+        # Phone validation: 10 digits numeric only
+        phone = str(self.driver_phone).strip()
+        if not (phone.isdigit() and len(phone) == 10):
+            frappe.throw(_("Driver Phone Number must be exactly 10 digits (numeric only)"))
+
     def on_submit(self):
         if self.status == "Draft":
             self.db_set("status", "Dispatched")
@@ -61,9 +75,4 @@ class DeliveryNote(Document):
             frappe.throw(_("Invalid status transition from {0} to {1}").format(self.status, new_status))
 
         self.db_set("status", new_status)
-        
-        if new_status == "Delivered":
-            # Update actual delivery date in Transport Details if it exists
-            frappe.db.set_value("Transport Details", {"delivery_note": self.name}, "actual_delivery_date", today())
-        
         return self.status

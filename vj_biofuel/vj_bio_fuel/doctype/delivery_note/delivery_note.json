@@ -12,6 +12,12 @@
   "customer",
   "delivery_address",
   "company",
+  "transport_section",
+  "vehicle_number",
+  "driver_phone",
+  "driver_name",
+  "transporter_name",
+  "transport_type",
   "items_section",
   "items"
  ],
@@ -62,6 +68,39 @@
    "read_only": 1
   },
   {
+   "fieldname": "transport_section",
+   "fieldtype": "Section Break",
+   "label": "Transport Details"
+  },
+  {
+   "fieldname": "vehicle_number",
+   "fieldtype": "Data",
+   "label": "Vehicle Number",
+   "reqd": 1
+  },
+  {
+   "fieldname": "driver_phone",
+   "fieldtype": "Data",
+   "label": "Driver Phone Number",
+   "reqd": 1
+  },
+  {
+   "fieldname": "driver_name",
+   "fieldtype": "Data",
+   "label": "Driver Name"
+  },
+  {
+   "fieldname": "transporter_name",
+   "fieldtype": "Data",
+   "label": "Transporter Name"
+  },
+  {
+   "fieldname": "transport_type",
+   "fieldtype": "Select",
+   "label": "Transport Type",
+   "options": "Own Vehicle\nHired Transport"
+  },
+  {
    "fieldname": "items_section",
    "fieldtype": "Section Break",
    "label": "Items"
@@ -76,16 +115,7 @@
  ],
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
- "links": [
-  {
-   "link_doctype": "Transport Details",
-   "link_fieldname": "delivery_note"
-  },
-  {
-   "link_doctype": "E-Way Bill",
-   "link_fieldname": "delivery_note"
-  }
- ],
+ "links": [],
  "modified": "2026-05-02 00:00:00",
  "modified_by": "Administrator",
  "module": "VJ Bio Fuel",

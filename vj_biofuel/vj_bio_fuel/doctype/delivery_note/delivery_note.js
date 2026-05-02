@@ -15,7 +15,25 @@ frappe.ui.form.on('Delivery Note', {
                 });
             }
         }
+        
+        // UX Improvement: Make phone number clickable
+        if (frm.doc.driver_phone && /^\d{10}$/.test(frm.doc.driver_phone)) {
+            frm.set_df_property('driver_phone', 'description', 
+                `<a href="tel:${frm.doc.driver_phone}" class="text-primary font-weight-bold">📞 Call Driver</a>`
+            );
+        }
     },
+    
+    driver_phone: function(frm) {
+        if (frm.doc.driver_phone && /^\d{10}$/.test(frm.doc.driver_phone)) {
+            frm.set_df_property('driver_phone', 'description', 
+                `<a href="tel:${frm.doc.driver_phone}" class="text-primary font-weight-bold">📞 Call Driver</a>`
+            );
+        } else {
+            frm.set_df_property('driver_phone', 'description', __('Enter 10-digit mobile number'));
+        }
+    },
+    
     sales_invoice: function(frm) {
         if (frm.doc.sales_invoice) {
             frappe.model.with_doc('Sales Invoice', frm.doc.sales_invoice, function() {
