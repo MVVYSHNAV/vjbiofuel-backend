@@ -281,9 +281,27 @@
     "parenttype": "Workspace",
     "report_ref_doctype": null,
     "type": "Link"
+   },
+   {
+    "dependencies": null,
+    "description": null,
+    "hidden": 0,
+    "icon": "settings",
+    "is_query_report": 0,
+    "label": "VJ Bio Fuel Settings",
+    "link_count": 0,
+    "link_to": "VJ Bio Fuel Settings",
+    "link_type": "DocType",
+    "onboard": 0,
+    "only_for": null,
+    "parent": "VJ Bio Fuel Admin",
+    "parentfield": "links",
+    "parenttype": "Workspace",
+    "report_ref_doctype": null,
+    "type": "Link"
    }
   ],
-  "modified": "2026-05-02 14:07:43.126821",
+  "modified": "2026-05-02 15:21:01.640326",
   "module": "VJ Bio Fuel",
   "name": "VJ Bio Fuel Admin",
   "number_cards": [
