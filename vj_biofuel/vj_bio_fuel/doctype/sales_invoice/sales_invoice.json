@@ -13,6 +13,7 @@
   "company",
   "column_break_6",
   "e_way_bill_no",
+  "e_way_bill_date",
   "delivery_note",
   "mode_of_payment",
   "reference_no",
@@ -79,6 +80,11 @@
    "fieldname": "e_way_bill_no",
    "fieldtype": "Data",
    "label": "e-Way Bill No."
+  },
+  {
+   "fieldname": "e_way_bill_date",
+   "fieldtype": "Date",
+   "label": "e-Way Bill Date"
   },
   {
    "fieldname": "delivery_note",

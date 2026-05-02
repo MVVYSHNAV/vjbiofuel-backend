@@ -68,7 +68,6 @@ def create_print_format():
         padding: 10px;
         border: 1.5px solid #000;
         border-top: none;
-        background-color: #fff;
     }
     
     .footer-box {
@@ -91,7 +90,7 @@ def create_print_format():
     <table class="main-table">
         <!-- Section 1: Company and Metadata -->
         <tr>
-            <td width="50%" rowspan="3">
+            <td width="50%" rowspan="4">
                 {% set company = frappe.get_doc("Company", doc.company) %}
                 <div class="bold" style="font-size: 12pt;">{{ company.company_name }}</div>
                 <div style="margin-top: 5px;">
@@ -108,6 +107,16 @@ def create_print_format():
             <td width="25%">
                 <span class="label-small">Dated</span>
                 <div class="bold">{{ frappe.utils.getdate(doc.posting_date).strftime('%d-%b-%Y') }}</div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <span class="label-small">e-Way Bill No.</span>
+                <div class="bold" style="font-size: 10pt;">{{ doc.e_way_bill_no or '--' }}</div>
+            </td>
+            <td>
+                <span class="label-small">e-Way Bill Date</span>
+                <div>{{ frappe.utils.getdate(doc.e_way_bill_date).strftime('%d-%b-%Y') if doc.e_way_bill_date else '--' }}</div>
             </td>
         </tr>
         <tr>
@@ -214,12 +223,10 @@ def create_print_format():
             </tr>
             {% endfor %}
             
-            <!-- Filler rows to maintain height if needed -->
             {% if doc.items|length < 3 %}
             <tr style="height: 40px;"><td colspan="7"></td></tr>
             {% endif %}
 
-            <!-- Total Row -->
             <tr style="background-color: #f8f9fa;">
                 <td colspan="3" class="text-right bold">Total</td>
                 <td class="text-right bold">{{ doc.items | sum(attribute='qty') }} LTR</td>
@@ -229,7 +236,6 @@ def create_print_format():
         </tbody>
     </table>
 
-    <!-- Amount in Words -->
     <div class="amount-words">
         <span class="label-small">Amount Chargeable (in words)</span>
         <div class="bold" style="text-transform: capitalize; font-size: 9.5pt;">
@@ -238,7 +244,6 @@ def create_print_format():
         </div>
     </div>
 
-    <!-- HSN Summary -->
     <table class="hsn-summary-table">
         <thead>
             <tr style="background-color: #f8f9fa;">
@@ -305,7 +310,6 @@ def create_print_format():
         Tax Amount (in words) : <span class="bold">INR {{ frappe.utils.money_in_words(doc.tax_amount, "INR").replace("INR ", "") }} Only</span>
     </div>
 
-    <!-- Final Footer -->
     <div class="footer-box">
         <table width="100%" style="border-collapse: collapse;">
             <tr>
@@ -332,7 +336,7 @@ def create_print_format():
     doc = frappe.get_doc("Print Format", "VJ Sales Invoice")
     doc.html = html_content
     doc.save()
-    print("Print Format 'VJ Sales Invoice' standardized with Inter font and premium spacing.")
+    print("Print Format 'VJ Sales Invoice' updated with prominent e-Way Bill section.")
 
 if __name__ == "__main__":
     create_print_format()
