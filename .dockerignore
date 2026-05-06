@@ -1,0 +1,10 @@
+.git
+.github
+env/
+logs/
+*.pyc
+__pycache__
+sites/*/public/files/*
+sites/*/private/files/*
+node_modules/
+.DS_Store
