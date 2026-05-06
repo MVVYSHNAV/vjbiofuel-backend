@@ -1,0 +1,109 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2026-05-02 00:00:00",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "company_section",
+  "default_company",
+  "accounts_section",
+  "default_sales_account",
+  "default_purchase_account",
+  "default_cash_account",
+  "default_bank_account",
+  "taxes_section",
+  "default_tax_rate",
+  "system_section",
+  "enable_auto_production_batch"
+ ],
+ "fields": [
+  {
+   "fieldname": "company_section",
+   "fieldtype": "Section Break",
+   "label": "Company Defaults"
+  },
+  {
+   "fieldname": "default_company",
+   "fieldtype": "Link",
+   "label": "Default Company",
+   "options": "Company"
+  },
+  {
+   "fieldname": "accounts_section",
+   "fieldtype": "Section Break",
+   "label": "Account Defaults"
+  },
+  {
+   "fieldname": "default_sales_account",
+   "fieldtype": "Link",
+   "label": "Default Sales Account",
+   "options": "Account"
+  },
+  {
+   "fieldname": "default_purchase_account",
+   "fieldtype": "Link",
+   "label": "Default Purchase Account",
+   "options": "Account"
+  },
+  {
+   "fieldname": "default_cash_account",
+   "fieldtype": "Link",
+   "label": "Default Cash Account",
+   "options": "Account"
+  },
+  {
+   "fieldname": "default_bank_account",
+   "fieldtype": "Link",
+   "label": "Default Bank Account",
+   "options": "Account"
+  },
+  {
+   "fieldname": "taxes_section",
+   "fieldtype": "Section Break",
+   "label": "Tax Defaults"
+  },
+  {
+   "default": "18.0",
+   "fieldname": "default_tax_rate",
+   "fieldtype": "Percent",
+   "label": "Default Tax Rate (%)"
+  },
+  {
+   "fieldname": "system_section",
+   "fieldtype": "Section Break",
+   "label": "System Settings"
+  },
+  {
+   "default": "1",
+   "fieldname": "enable_auto_production_batch",
+   "fieldtype": "Check",
+   "label": "Enable Auto Production Batch"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "issingle": 1,
+ "modified": "2026-05-02 00:00:00",
+ "modified_by": "Administrator",
+ "module": "VJ Bio Fuel",
+ "name": "VJ Bio Fuel Settings",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

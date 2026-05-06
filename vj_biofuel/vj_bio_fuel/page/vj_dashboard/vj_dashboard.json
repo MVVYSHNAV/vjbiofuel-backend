@@ -1,0 +1,17 @@
+{
+ "creation": "2026-05-02 00:00:00",
+ "doctype": "Page",
+ "modified": "2026-05-02 00:00:00",
+ "modified_by": "Administrator",
+ "module": "VJ Bio Fuel",
+ "name": "vj_dashboard",
+ "owner": "Administrator",
+ "page_name": "VJ Bio Fuel Dashboard",
+ "roles": [
+  {
+   "role": "System Manager"
+  }
+ ],
+ "standard": "Yes",
+ "title": "VJ Bio Fuel Dashboard"
+}

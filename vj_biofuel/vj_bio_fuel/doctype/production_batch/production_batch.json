@@ -1,0 +1,142 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2026-05-02 00:00:00",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "posting_date",
+  "status",
+  "input_section",
+  "input_item",
+  "input_qty",
+  "available_stock",
+  "output_section",
+  "output_item",
+  "output_qty",
+  "wastage_qty",
+  "yield_percentage",
+  "costing_section",
+  "input_cost",
+  "output_cost_per_litre"
+ ],
+ "fields": [
+  {
+   "fieldname": "posting_date",
+   "fieldtype": "Date",
+   "label": "Posting Date",
+   "reqd": 1,
+   "default": "Today"
+  },
+  {
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "label": "Status",
+   "options": "Draft\nSubmitted\nCancelled",
+   "default": "Draft",
+   "read_only": 1
+  },
+  {
+   "fieldname": "input_section",
+   "fieldtype": "Section Break",
+   "label": "Input Details"
+  },
+  {
+   "fieldname": "input_item",
+   "fieldtype": "Link",
+   "label": "Input Item (Raw Oil)",
+   "options": "Item",
+   "reqd": 1
+  },
+  {
+   "fieldname": "input_qty",
+   "fieldtype": "Float",
+   "label": "Input Quantity (LTR)",
+   "reqd": 1
+  },
+  {
+   "fieldname": "available_stock",
+   "fieldtype": "Float",
+   "label": "Available Stock",
+   "read_only": 1
+  },
+  {
+   "fieldname": "output_section",
+   "fieldtype": "Section Break",
+   "label": "Output Details"
+  },
+  {
+   "fieldname": "output_item",
+   "fieldtype": "Link",
+   "label": "Output Item (Processed Oil)",
+   "options": "Item",
+   "reqd": 1
+  },
+  {
+   "fieldname": "output_qty",
+   "fieldtype": "Float",
+   "label": "Output Quantity (LTR)",
+   "reqd": 1
+  },
+  {
+   "fieldname": "wastage_qty",
+   "fieldtype": "Float",
+   "label": "Wastage Quantity (LTR)",
+   "read_only": 1
+  },
+  {
+   "fieldname": "yield_percentage",
+   "fieldtype": "Percent",
+   "label": "Yield (%)",
+   "read_only": 1
+  },
+  {
+   "fieldname": "costing_section",
+   "fieldtype": "Section Break",
+   "label": "Costing"
+  },
+  {
+   "fieldname": "input_cost",
+   "fieldtype": "Currency",
+   "label": "Total Input Cost",
+   "read_only": 1
+  },
+  {
+   "fieldname": "output_cost_per_litre",
+   "fieldtype": "Currency",
+   "label": "Output Cost per Litre",
+   "read_only": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2026-05-02 00:00:00",
+ "modified_by": "Administrator",
+ "module": "VJ Bio Fuel",
+ "name": "Production Batch",
+ "naming_rule": "Expression",
+ "autoname": "BATCH-.YYYY.-.#####",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "submit": 1,
+   "cancel": 1,
+   "amend": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

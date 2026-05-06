@@ -1,0 +1,13 @@
+{
+ "app_name": "vj_biofuel",
+ "creation": "2024-05-02 00:00:00.000000",
+ "docstatus": 0,
+ "doctype": "Module Def",
+ "module_name": "VJ Bio Fuel",
+ "modified": "2024-05-02 00:00:00.000000",
+ "modified_by": "Administrator",
+ "name": "VJ Bio Fuel",
+ "owner": "Administrator",
+ "package": "vj_biofuel",
+ "restrict_to_domain": ""
+}
